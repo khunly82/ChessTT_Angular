@@ -1,0 +1,11 @@
+<ng-container *ngIf="control && errors && control.dirty">
+    <small class="p-error" *ngIf="errors['required']">Ce champs est requis</small>
+    <small class="p-error" *ngIf="errors['minlength']">Ce champs doit avoir une longeur minimale de {{ errors['minlength'].requiredLength }}</small>
+    <small class="p-error" *ngIf="errors['maxlength']">Ce champs doit avoir une longeur maximale de {{ errors['maxlength'].requiredLength }}</small>
+    <small class="p-error" *ngIf="errors['min']">Ce champs doit avoir une valeur minimale de {{ errors['min'].min }}</small>
+    <small class="p-error" *ngIf="errors['max']">Ce champs doit avoir une valeur maximale de {{ errors['max'].max }}</small>
+    <small class="p-error" *ngIf="errors['notBefore']">La date doit être inférieure à {{ errors['notBefore'].requiredDate | date: 'dd/MM/yyyy' }}</small>
+    <small class="p-error" *ngIf="errors['unique']">Cette valeur est déjà utilisée</small>
+    <small class="p-error" *ngIf="errors['email']">Cette valeur n'est pas une adresse email valide</small>
+    <small class="p-error" *ngIf="errors['greaterOrEqualThan']">Cette valeur doit être supérieure ou égale à {{ errors['greaterOrEqualThan'].smallProp}}</small>
+</ng-container>

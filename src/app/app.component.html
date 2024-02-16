@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<div class="flex-container">
+    <nav [ngClass]="{ closed: !menuOpen }">
+        <app-menu></app-menu>
+    </nav>
+    <div class="container">
+        <main [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+            <app-loader></app-loader>
+            <router-outlet #outlet="outlet"></router-outlet>
+        </main>
+        <app-footer></app-footer>
+    </div>
+</div>
+
+<p-toast position="center"></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>

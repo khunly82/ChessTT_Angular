@@ -1,0 +1,28 @@
+:host {
+    color: var(--bluegray-600);
+    code {
+        display: block;
+        background-color: var(--bluegray-600);
+        color: var(--bluegray-100);
+        padding: 20px 10px;
+        margin: 5px;
+        font-weight: bloder;
+    }
+    dt {
+        float: left;
+        clear: left;
+        width: 110px;
+        font-weight: bolder;
+        color: var(--green-400);
+    }
+
+    dt::after {
+        content: ":";
+    }
+
+    dd {
+        margin: 0 0 0 80px;
+        padding: 0 0 0.5em 0;
+        font-weight: bolder;
+    }
+}

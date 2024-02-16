@@ -1,0 +1,66 @@
+<h2>Nouveau Membre</h2>
+<p-card>
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div class="grid">
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <input pInputText 
+                            type="text" 
+                            formControlName="username">
+                        <label class="required">Pseudo</label>
+                    </span>
+                    <app-form-error [control]="fg.get('username')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <input pInputText 
+                            type="email" 
+                            formControlName="email">
+                        <label class="required">Email</label>
+                    </span>
+                    <app-form-error [control]="fg.get('email')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-inputNumber formControlName="elo"></p-inputNumber>
+                        <label>ELO (0-3000)</label>
+                    </span>
+                    <app-form-error [control]="fg.get('elo')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-calendar styleClass="w-full" 
+                                    formControlName="birthDate" 
+                                    dateFormat="dd/mm/yy"></p-calendar>
+                        <label class="required">Date de naissance</label>
+                    </span>
+                    <app-form-error [control]="fg.get('birthDate')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-dropdown styleClass="w-full" 
+                                    [options]="GenderEnum | enumToArray : true" 
+                                    formControlName="gender"></p-dropdown>
+                        <label class="required">Genre</label>
+                    </span>
+                    <app-form-error [control]="fg.get('gender')"></app-form-error>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button pButton 
+                    class="p-button-secondary p-button-raised p-button-sm" 
+                    [loading]="isLoading" 
+                    label="Sauvegarder"></button>
+        </div>
+    </form>
+</p-card>

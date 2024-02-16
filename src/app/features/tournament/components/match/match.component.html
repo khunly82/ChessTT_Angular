@@ -1,0 +1,11 @@
+<div class="match grid">
+    <div class="col">{{ match.whiteName }}</div>
+    <span class="col">VS</span>
+    <div class="col">{{ match.blackName }}</div>
+    <span class="col"><p-dropdown [disabled]="disabled" 
+                                  styleClass="w-full" 
+                                  [(ngModel)]="match.result" 
+                                  [options]="ResultEnum | enumToArray"
+                                  (onChange)="updateResult(match)"></p-dropdown>
+    </span>
+</div>

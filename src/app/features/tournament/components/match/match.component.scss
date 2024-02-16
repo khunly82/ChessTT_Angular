@@ -1,0 +1,9 @@
+:host {
+    width: 100%;
+    display: block;
+    .match {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

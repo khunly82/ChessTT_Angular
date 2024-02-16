@@ -1,0 +1,521 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>labo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">labo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >TournamentEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/features/tournament/states/tournament.reducers.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeResult$" >changeResult$</a>
+                            </li>
+                            <li>
+                                <a href="#selectTournament" >selectTournament</a>
+                            </li>
+                            <li>
+                                <a href="#startTournament$" >startTournament$</a>
+                            </li>
+                            <li>
+                                <a href="#validateRoudResult$" >validateRoudResult$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_actions$: Actions, _tournamentService: <a href="../injectables/TournamentService.html" target="_self">TournamentService</a>, _matchService: <a href="../injectables/MatchService.html" target="_self">MatchService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/features/tournament/states/tournament.reducers.ts:91</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_tournamentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TournamentService.html" target="_self" >TournamentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_matchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MatchService.html" target="_self" >MatchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeResult$"></a>
+                    <span class="name">
+                        <span ><b>changeResult$</b></span>
+                        <a href="#changeResult$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(changeResult),
+        switchMap(({match}) &#x3D;&gt; this._matchService.updateMatch(match.id, match.result).pipe(
+            map(() &#x3D;&gt; selectTournament({id: match.tournamentId}))
+        )),
+    ))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/features/tournament/states/tournament.reducers.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectTournament"></a>
+                    <span class="name">
+                        <span ><b>selectTournament</b></span>
+                        <a href="#selectTournament"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(selectTournament),
+        switchMap(({id}) &#x3D;&gt; this._tournamentService.getDetails(id).pipe(
+            map(tournament &#x3D;&gt; loadSelectedTournament({tournament})),
+            catchError(() &#x3D;&gt; EMPTY),
+            startWith(loadingStart()),
+            endWith(loadingStop()),
+        )),
+    ))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/features/tournament/states/tournament.reducers.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startTournament$"></a>
+                    <span class="name">
+                        <span ><b>startTournament$</b></span>
+                        <a href="#startTournament$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(startTournament),
+        switchMap(({id}) &#x3D;&gt; this._tournamentService.start(id).pipe(
+            map(() &#x3D;&gt; selectTournament({id}))
+        )),
+    ))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/features/tournament/states/tournament.reducers.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateRoudResult$"></a>
+                    <span class="name">
+                        <span ><b>validateRoudResult$</b></span>
+                        <a href="#validateRoudResult$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(validateRoundResults),
+        switchMap(({id}) &#x3D;&gt; this._tournamentService.nextRound(id).pipe(
+            map(() &#x3D;&gt; selectTournament({id}))
+        )),
+    ))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/features/tournament/states/tournament.reducers.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
+import { createAction, createReducer, on, props, Store } from &quot;@ngrx/store&quot;;
+import { catchError, EMPTY, endWith, map, startWith, switchMap } from &quot;rxjs&quot;;
+import { loadingStart, loadingStop } from &quot;src/app/core/states/loading.reducer&quot;;
+import { ResultEnum } from &quot;../enums/result.enum&quot;;
+import { MatchModel } from &quot;../models/match.model&quot;;
+import { TournamentDetailsModel } from &quot;../models/tournament-details.model&quot;;
+import { TournamentSearchModel } from &quot;../models/tournament-search.model&quot;;
+import { MatchService } from &quot;../services/match.service&quot;;
+import { TournamentService } from &quot;../services/tournament.service&quot;;
+
+export interface TournamentState {
+    searchCriteria: TournamentSearchModel,
+    selectedTournament: TournamentDetailsModel,
+    selectedTab: number;
+}
+
+export const changeCriteria &#x3D; createAction(&#x27;[tournament] change criteria&#x27;, props&lt;{criteria: TournamentSearchModel}&gt;());
+export const changePage &#x3D; createAction(&#x27;[tournament] change page&#x27;, props&lt;{offset: number}&gt;());
+
+
+export const selectTournament &#x3D; createAction(&#x27;[tournament] select tournament&#x27;, props&lt;{id: string}&gt;());
+export const startTournament &#x3D; createAction(&#x27;[tournament] start&#x27;, props&lt;{id: string}&gt;());
+export const changeResult &#x3D; createAction(&#x27;[tournament] change result&#x27;, props&lt;{match: MatchModel}&gt;());
+export const validateRoundResults &#x3D; createAction(&#x27;[tournament] validateRoundResults&#x27;, props&lt;{id: string}&gt;());
+
+export const loadSelectedTournament &#x3D; createAction(&#x27;[tournament] load selected&#x27;, props&lt;{tournament: TournamentDetailsModel}&gt;());
+export const changeTab &#x3D; createAction(&#x27;[tournament] change tab&#x27;, props&lt;{tab: number}&gt;());
+
+const initialState &#x3D; &lt;TournamentState&gt;{ 
+    searchCriteria: { offset: 0, name: null },
+    selectedTournament: {},
+    selectedTab: -1,
+};
+
+export const TournamentReducer &#x3D; createReducer(
+    initialState,
+    on(changeCriteria, (state, {criteria}) &#x3D;&gt; ({ 
+        ...state,
+        searchCriteria: { ...state.searchCriteria, ...criteria },
+    })),
+    on(changePage, (state, {offset}) &#x3D;&gt; ({ 
+        ...state,
+        searchCriteria: { ...state.searchCriteria, offset: offset },
+    })),
+    on(loadSelectedTournament, (state, {tournament}) &#x3D;&gt; ({
+        ...state,
+        selectedTab: tournament.currentRound - 1,
+        selectedTournament:  calculateTournamentScore(tournament.currentRound, tournament)
+    })),
+    on(changeTab, (state, {tab}) &#x3D;&gt; ({
+        ...state,
+        selectedTab: tab,
+        selectedTournament:  calculateTournamentScore(tab + 1, state.selectedTournament)
+    })),
+);
+
+@Injectable()
+export class TournamentEffects {
+
+    selectTournament &#x3D; createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(selectTournament),
+        switchMap(({id}) &#x3D;&gt; this._tournamentService.getDetails(id).pipe(
+            map(tournament &#x3D;&gt; loadSelectedTournament({tournament})),
+            catchError(() &#x3D;&gt; EMPTY),
+            startWith(loadingStart()),
+            endWith(loadingStop()),
+        )),
+    ));
+
+    startTournament$ &#x3D; createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(startTournament),
+        switchMap(({id}) &#x3D;&gt; this._tournamentService.start(id).pipe(
+            map(() &#x3D;&gt; selectTournament({id}))
+        )),
+    ));
+
+    validateRoudResult$ &#x3D; createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(validateRoundResults),
+        switchMap(({id}) &#x3D;&gt; this._tournamentService.nextRound(id).pipe(
+            map(() &#x3D;&gt; selectTournament({id}))
+        )),
+    ));
+
+    changeResult$ &#x3D; createEffect(() &#x3D;&gt; this._actions$.pipe(
+        ofType(changeResult),
+        switchMap(({match}) &#x3D;&gt; this._matchService.updateMatch(match.id, match.result).pipe(
+            map(() &#x3D;&gt; selectTournament({id: match.tournamentId}))
+        )),
+    ));
+
+    constructor(
+        private readonly _actions$: Actions,
+        private readonly _tournamentService: TournamentService,
+        private readonly _matchService: MatchService,
+    ) {}
+}
+
+
+const calculateTournamentScore &#x3D; (round: number, tournament: TournamentDetailsModel) &#x3D;&gt; ({ 
+    ...tournament,
+    canValidateRound: tournament.matches.filter(m &#x3D;&gt; m.round &#x3D;&#x3D;&#x3D; round).every(m &#x3D;&gt; m.result !&#x3D;&#x3D; ResultEnum.NOT_PLAYED),
+    players :([ ...tournament?.players.map(p &#x3D;&gt; ({
+        ...p,
+        matchPlayed: tournament?.matches
+            .filter(m &#x3D;&gt; m.round &lt;&#x3D; round &amp;&amp; m.result !&#x3D;&#x3D; ResultEnum.NOT_PLAYED &amp;&amp; (m.blackId &#x3D;&#x3D;&#x3D; p.id || m.whiteId &#x3D;&#x3D;&#x3D; p.id))
+            .reduce((prev, current) &#x3D;&gt; prev + 1, 0),
+        wins: tournament?.matches
+            .filter(m &#x3D;&gt; m.round &lt;&#x3D; round &amp;&amp; m.result !&#x3D;&#x3D; ResultEnum.NOT_PLAYED &amp;&amp; (m.blackId &#x3D;&#x3D;&#x3D; p.id || m.whiteId &#x3D;&#x3D;&#x3D; p.id))
+            .filter(m &#x3D;&gt; (m.blackId &#x3D;&#x3D;&#x3D; p.id &amp;&amp; m.result &#x3D;&#x3D;&#x3D; ResultEnum.BLACK_WIN) || (m.whiteId &#x3D;&#x3D;&#x3D; p.id &amp;&amp; m.result &#x3D;&#x3D;&#x3D; ResultEnum.WHITE_WIN))
+            .reduce((prev, current) &#x3D;&gt; prev + 1, 0),
+        defeats: tournament?.matches
+            .filter(m &#x3D;&gt; m.round &lt;&#x3D; round &amp;&amp; m.result !&#x3D;&#x3D; ResultEnum.NOT_PLAYED &amp;&amp; (m.blackId &#x3D;&#x3D;&#x3D; p.id || m.whiteId &#x3D;&#x3D;&#x3D; p.id))
+            .filter(m &#x3D;&gt; (m.blackId &#x3D;&#x3D;&#x3D; p.id &amp;&amp; m.result &#x3D;&#x3D;&#x3D; ResultEnum.WHITE_WIN) || (m.whiteId &#x3D;&#x3D;&#x3D; p.id &amp;&amp; m.result &#x3D;&#x3D;&#x3D; ResultEnum.BLACK_WIN))
+            .reduce((prev, current) &#x3D;&gt; prev + 1, 0),
+        draws: tournament?.matches
+            .filter(m &#x3D;&gt; m.round &lt;&#x3D; round &amp;&amp; m.result !&#x3D;&#x3D; ResultEnum.NOT_PLAYED &amp;&amp; (m.blackId &#x3D;&#x3D;&#x3D; p.id || m.whiteId &#x3D;&#x3D;&#x3D; p.id))
+            .filter(m &#x3D;&gt; m.result &#x3D;&#x3D;&#x3D; ResultEnum.DRAW)
+            .reduce((prev, current) &#x3D;&gt; prev + 1, 0)
+    })) ]
+    .sort((p1, p2) &#x3D;&gt; (p2.wins + p2.draws * 0.5) - (p1.wins + p1.draws * 0.5))
+    .reduce((prev: any[], current, index) &#x3D;&gt; {
+        current.score &#x3D; current.wins + current.draws * 0.5;
+        current.position &#x3D; prev[prev.length-1]?.score &#x3D;&#x3D;&#x3D; current.score ? prev[prev.length-1]?.position : (index + 1);
+        return [...prev, current];
+    }, [])
+)});</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TournamentEffects.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

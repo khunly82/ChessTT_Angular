@@ -1,0 +1,77 @@
+<div *ngIf="tournament">
+    <div class="my-3">
+        <button pButton 
+                type="button" 
+                class="p-button-secondary p-button-raised p-button-sm" 
+                [routerLink]="['/tournament']" 
+                label="Retour à l'index"></button>
+    </div>
+
+
+    <h2>{{ tournament.name }}</h2>
+
+    <p-card *ngIf="tournament.status !== StatusEnum.WAITING_FOR_PLAYERS">
+        <div class="py-3">
+            <p-steps [(activeIndex)]="selectedTab" 
+                     [model]="steps" 
+                     [readonly]="false"
+                     (activeIndexChange)="onTabChange()"></p-steps>
+        </div>
+    </p-card>
+    <div class="grid py-3">
+        <div  class="col-12 sm:col-6">
+            <p-card>
+                <p-table [value]="tournament.players">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Position</th>
+                            <th>Nom</th>
+                            <th>P</th>
+                            <th>V</th>
+                            <th>D</th>
+                            <th>N</th>
+                            <th>Score</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item>
+                        <tr>
+                            <th>{{item.position}}</th>
+                            <th>{{item.username}}</th>
+                            <th>{{item.matchPlayed}}</th>
+                            <th>{{item.wins}}</th>
+                            <th>{{item.defeats}}</th>
+                            <th>{{item.draws}}</th>
+                            <th>{{item.score}}</th>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-card>
+        </div>
+        <div class="col-12 sm:col-6">
+            <p-card>
+                <div class="mt-3">
+                    <app-match *ngFor="let match of tournament.matches|roundFilter:selectedTab + 1" 
+                               [match]="match"
+                               [disabled]="tournament.currentRound !== selectedTab + 1 || role !== RoleEnum.ADMIN || tournament.status === StatusEnum.CLOSED"></app-match>
+                </div> 
+            </p-card>
+        </div>
+        <div *ngIf="tournament.currentRound == selectedTab + 1 && role === RoleEnum.ADMIN" class="col-12">
+            <div class="actions col-12">
+                <button *ngIf="tournament.status === StatusEnum.WAITING_FOR_PLAYERS" pButton 
+                        class="p-button-secondary p-button-raised p-button-sm" 
+                        [loading]="isLoading"
+                        [disabled]="!tournament.canStart" 
+                        label="Démarrer"
+                        (click)="start()"></button>
+                <button *ngIf="tournament.status === StatusEnum.IN_PROGRESS" pButton 
+                        class="p-button-secondary p-button-raised p-button-sm" 
+                        [loading]="isLoading"
+                        [disabled]="!tournament.canValidateRound" 
+                        label="Sauver"
+                        (click)="save()"></button>
+                                    
+            </div>
+        </div>
+    </div>
+</div>

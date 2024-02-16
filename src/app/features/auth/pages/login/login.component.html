@@ -1,0 +1,40 @@
+
+<h2 class="pb-3">Connexion</h2>
+
+<p-card>
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div class="grid">
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <input pInputText 
+                            id="username" 
+                            class="p-inputtext-sm" 
+                            type="text" 
+                            formControlName="username">
+                        <label for="username">Username</label>
+                    </span>
+                    <app-form-error [control]="fg.get('username')"></app-form-error>
+                </div>
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <input pInputText
+                            id="password"  
+                            class="p-inputtext-sm" 
+                            type="password" 
+                            formControlName="password">
+                        <label for="password">Password</label>
+                    </span>
+                    <app-form-error [control]="fg.get('password')"></app-form-error>
+                </div>           
+                <div>
+                    <button pButton 
+                            class="p-button-secondary p-button-raised p-button-sm" 
+                            [loading]="isLoading" 
+                            label="Se Connecter"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</p-card>

@@ -1,0 +1,8 @@
+p-inputnumber {
+    display: block;
+    ::ng-deep {
+        .p-inputnumber {
+            display: block;
+        }
+    }
+}

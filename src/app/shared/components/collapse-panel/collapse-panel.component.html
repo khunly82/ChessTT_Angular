@@ -1,0 +1,10 @@
+<div class="collapse-panel">
+    <div class="header">
+        <button pButton class="p-button-raised p-button-primary p-button-sm" icon="pi pi-cog" (click)="toggle()"></button>
+    </div>
+    <div #body class="body">
+        <div class="padding">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

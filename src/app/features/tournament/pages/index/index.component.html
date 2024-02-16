@@ -1,0 +1,131 @@
+<div *ngIf="isAdmin" class="my-3">
+    <button pButton 
+            type="button" 
+            class="p-button-secondary p-button-raised p-button-sm" 
+            [routerLink]="['/tournament', 'add']" 
+            label="Nouveau"></button>
+</div>
+<p-card>
+    <app-collapse-panel>
+        <form class="pt-2" [formGroup]="fg" (ngSubmit)="search()">
+            <div class="grid">
+                <div class="col-12 sm:col-6">
+                    <div class="pb-4">
+                        <span class="p-float-label">
+                            <input pInputText 
+                                    type="text" 
+                                    formControlName="name">
+                            <label>Nom</label>
+                        </span>
+                        <app-form-error [control]="fg.get('name')"></app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6">
+                    <div class="pb-4">
+                        <span class="p-float-label">
+                            <p-dropdown styleClass="w-full" 
+                                        [options]="CategoryEnum | enumToArray : true" 
+                                        formControlName="category"></p-dropdown>
+                            <label>Catégorie</label>
+                        </span>
+                        <app-form-error [control]="fg.get('category')"></app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6">
+                    <div class="pb-4">
+                        <span class="p-float-label">
+                            <p-multiSelect styleClass="w-full" 
+                                            [options]="StatusEnum | enumToArray" 
+                                            formControlName="statuses" 
+                                            display="chip"></p-multiSelect>
+                            <label>Statuts</label>
+                        </span>
+                        <app-form-error [control]="fg.get('statuses')"></app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6">
+                    <div class="pb-4">
+                        <div>
+                            <label>Réservé aux filles</label>
+                        </div>
+                        <p-inputSwitch formControlName="womenOnly"></p-inputSwitch>
+                        <app-form-error [control]="fg.get('womenOnly')"></app-form-error>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button pButton
+                        type="reset"
+                        class="m-1 p-button-secondary p-button-raised p-button-sm"  
+                        label="Reset" icon="pi pi-refresh"></button>
+                <button pButton 
+                        class="m-1 p-button-primary p-button-raised p-button-sm"  
+                        label="Rechercher" icon="pi pi-search"></button>
+            </div>
+        </form>
+    </app-collapse-panel>
+    <p-paginator #topPaginator [rows]="10" [totalRecords]="total" (onPageChange)="paginate($event)"></p-paginator>
+    <p-table [value]="tournaments">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nom</th>
+                <th>Location</th>
+                <th>Categories</th>
+                <th>Elo</th>
+                <th>Statut</th>
+                <th>Fin des inscriptions</th>
+                <th>Joueurs</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.location}}</td>
+                <td><div class="m-1" *ngFor="let c of item.categories"><p-chip [label]="c"></p-chip></div></td>
+                <td>{{item.eloMin??0}} - {{item.eloMax??3000}}</td>
+                <td>{{item.status|statusToString}}</td>
+                <td>{{item.endOfRegistrationDate|toDate|date: 'dd/MM/yyyy'}}</td>
+                <td><span><span [ngClass]="{'p-error': item.count < item.minPlayers}">{{item.count}}</span>/{{item.maxPlayers}}</span></td>
+                <td>
+                    <button pButton
+                            pTooltip="Details" tooltipPosition="top"
+                            type="button" 
+                            class="p-button-secondary p-button-rounded p-button-sm m-1" 
+                            icon="pi pi-search" 
+                            [routerLink]="['/tournament', 'details', item.id]"></button>
+                    <button *ngIf="isAdmin && item.status !== StatusEnum.CLOSED"
+                            pButton
+                            pTooltip="Modifier" tooltipPosition="top"
+                            type="button" 
+                            class="p-button-info p-button-rounded p-button-sm m-1" 
+                            icon="pi pi-pencil" 
+                            [routerLink]="['/tournament', 'edit', item.id]"></button>
+                    <button *ngIf="isAdmin && item.status === StatusEnum.WAITING_FOR_PLAYERS"
+                            pButton
+                            pTooltip="Supprimer" tooltipPosition="top"
+                            type="button" 
+                            class="p-button-danger p-button-rounded p-button-sm m-1" 
+                            (click)="delete(item)" 
+                            icon="pi pi-trash"></button>
+                    <button *ngIf="item.canRegister"
+                            pButton 
+                            pTooltip="S'incrire" tooltipPosition="top"
+                            type="button" 
+                            class="p-button-success p-button-rounded p-button-sm m-1" 
+                            icon="pi pi-sign-in" 
+                            (click)="register(item)"></button>
+                    <button *ngIf="item.isRegistered"
+                            [disabled]="item.status !== StatusEnum.WAITING_FOR_PLAYERS"
+                            pButton
+                            pTooltip="Se désinscrire" tooltipPosition="top"
+                            type="button" 
+                            class="p-button-warning p-button-rounded p-button-sm m-1" 
+                            icon="pi pi-sign-out" 
+                            (click)="unregister(item)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-paginator #bottomPaginator [rows]="10" [totalRecords]="total" (onPageChange)="paginate($event)"></p-paginator>
+</p-card>

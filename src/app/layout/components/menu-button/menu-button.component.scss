@@ -1,0 +1,43 @@
+:host {
+    $button-size: 20px;
+    .menu {
+        height: $button-size;
+        width: $button-size;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: all .3s linear;
+        &:hover>div {
+            background-color: var(--bluegray-100);
+        }
+        >div {
+            position: absolute;
+            background-color: white;
+            height: calc(#{$button-size}/5);
+            width: 100%;
+            transition: transform .3s linear;
+            &:nth-child(1) {
+                transform: translateY(calc(#{$button-size}/5*-2));
+            }
+            &:nth-child(3) {
+                transform: translateY(calc(#{$button-size}/5*2));
+            }
+        }
+        &.closed {
+            transform: rotate(180deg);
+            >div {
+                &:nth-child(1) {
+                    transform: translateY(0) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: translateY(0) rotate(-45deg);
+                }
+            }
+        }
+    }
+    
+    
+}

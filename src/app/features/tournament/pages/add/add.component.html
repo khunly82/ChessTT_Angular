@@ -1,0 +1,113 @@
+<div class="my-3">
+    <button pButton 
+            type="button" 
+            class="p-button-secondary p-button-raised p-button-sm" 
+            [routerLink]="['/tournament']" 
+            label="Retour à l'index"></button>
+</div>
+<h2>Nouveau Tournoi</h2>
+<p-card>
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div class="grid">
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <input pInputText 
+                            type="text" 
+                            formControlName="name">
+                        <label class="required">Nom</label>
+                    </span>
+                    <app-form-error [control]="fg.get('name')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <input pInputText 
+                            type="text" 
+                            formControlName="location">
+                        <label>Lieu</label>
+                    </span>
+                    <app-form-error [control]="fg.get('location')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-inputNumber formControlName="minPlayers"></p-inputNumber>
+                        <label class="required">Nombre minimum de joueurs (2-16)</label>
+                    </span>
+                    <app-form-error [control]="fg.get('minPlayers')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-inputNumber formControlName="maxPlayers"></p-inputNumber>
+                        <label class="required">Nombre maximum de joueurs (2-16)</label>
+                    </span>
+                    <app-form-error [control]="fg.get('maxPlayers')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-inputNumber formControlName="eloMin"></p-inputNumber>
+                        <label>ELO minimum (0-3000)</label>
+                    </span>
+                    <app-form-error [control]="fg.get('eloMin')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-inputNumber formControlName="eloMax"></p-inputNumber>
+                        <label>ELO maximum (0-3000)</label>
+                    </span>
+                    <app-form-error [control]="fg.get('eloMax')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-multiSelect styleClass="w-full" 
+                                    [options]="CategoryEnum | enumToArray" 
+                                    formControlName="categories" 
+                                    display="chip"></p-multiSelect>
+                        <label class="required">Catégories</label>
+                    </span>
+                    <app-form-error [control]="fg.get('categories')"></app-form-error>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <span class="p-float-label">
+                        <p-calendar styleClass="w-full" 
+                                    formControlName="endOfRegistrationDate" 
+                                    dateFormat="dd/mm/yy"></p-calendar>
+                        <label class="required">Date de fin des inscriptions</label>
+                    </span>
+                    <app-form-error [control]="fg.get('endOfRegistrationDate')"></app-form-error>
+                    <span class="p-error" *ngIf="fg.dirty && fg.errors && fg.errors['invalidEndOfRegistrationDate']">
+                        La date est invalide
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 sm:col-6">
+                <div class="pb-4">
+                    <div>
+                        <label>Réservé aux filles</label>
+                    </div>
+                    <p-inputSwitch formControlName="womenOnly"></p-inputSwitch>
+                    <app-form-error [control]="fg.get('womenOnly')"></app-form-error>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button pButton 
+                    class="p-button-secondary p-button-raised p-button-sm" 
+                    [loading]="isLoading" 
+                    label="Sauvegarder"></button>
+        </div>
+    </form>
+</p-card>

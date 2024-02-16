@@ -1,0 +1,13 @@
+<header>
+    <div><app-menu-button></app-menu-button></div>
+    <div>Gestion Tournoi</div>
+    <div>
+        <ng-template [ngIf]="!isLogged" [ngIfElse]="logged">
+            <a routerLink="/auth/login">Se Connecter</a>
+        </ng-template>
+        <ng-template #logged>
+            <a pTooltip="Profil" tooltipPosition="top" [routerLink]="['member', 'profile']"><i class="pi pi-user"></i></a>
+            <a pTooltip="Se déconnecter" tooltipPosition="top" class="pl-3" (click)="logout()"><i class="pi pi-power-off"></i></a>
+        </ng-template>
+    </div>
+</header>

@@ -1,0 +1,16 @@
+:host {
+    display: block;
+    margin-bottom: 10px;
+    >.collapse-panel {
+        >.body {
+            margin-top: 20px;
+            transition: all .5s ease;
+            >.padding {
+                padding: 20px 10px;
+                border-radius: 6px;
+                background-color: var(--bluegray-100);
+                border: 1px solid var(--bluegray-300);
+            }
+        }
+    }
+}
