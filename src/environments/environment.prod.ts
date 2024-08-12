@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://khun.somee.com/api',
+  apiBaseUrl: 'https://khunlabo-dzbdeaedgegph5h3.westeurope-01.azurewebsites.net/api',
 };
