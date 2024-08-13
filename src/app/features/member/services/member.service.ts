@@ -18,7 +18,7 @@ export class MemberService {
     if(id) {
       params = params.append('id', id);
     }
-    return this._httpClient.head<void>(environment.apiBaseUrl + '/member/existsUsername', {params});
+    return this._httpClient.head<void>(environment.apiBaseUrl + '/member', {params});
   }
 
   checkEmail(email: string, id: string|null): Observable<void> {
@@ -27,7 +27,7 @@ export class MemberService {
     if(id) {
       params = params.append('id', id);
     }
-    return this._httpClient.head<void>(environment.apiBaseUrl + '/member/existsEmail', {params});
+    return this._httpClient.head<void>(environment.apiBaseUrl + '/member', {params});
   }
 
   register(form: any): Observable<void> {
