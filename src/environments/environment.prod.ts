@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://khunchess.somee.com/api',
+  apiBaseUrl: 'https://khun.somee.com/api',
 };
