@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://khunlabo-dzbdeaedgegph5h3.westeurope-01.azurewebsites.net/api',
+  apiBaseUrl: 'http://localhost:5026/api',
 };
 
 /*
