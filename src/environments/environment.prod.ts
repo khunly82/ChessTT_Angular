@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://chessapikhun-d8f0cnahf7c5a2dj.westeurope-01.azurewebsites.net/api',
+  apiBaseUrl: 'https://khun-chess-api-draya2ebc8bqdhfv.westeurope-01.azurewebsites.net/api',
 };
