@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:5026/api',
+  apiBaseUrl: 'https://tfchessapi-dmewhhepbuccc5ae.westeurope-01.azurewebsites.net/api',
 };
 
 /*
