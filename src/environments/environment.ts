@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://tfchessapi-dmewhhepbuccc5ae.westeurope-01.azurewebsites.net/api',
+  apiBaseUrl: 'https://chess-api-fmarepebcrehbccd.canadacentral-01.azurewebsites.net/api',
 };
 
 /*
