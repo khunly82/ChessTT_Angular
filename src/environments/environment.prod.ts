@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://chess-api-v2-eugaczexcbcuhmcw.francecentral-01.azurewebsites.net/api',
+  apiBaseUrl: 'https://tf-odoo-api-g8amdtepgmf9ara6.westeurope-01.azurewebsites.net/api',
 };
